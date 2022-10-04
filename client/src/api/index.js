@@ -18,3 +18,5 @@ export const createUser = (data) => {
         }
     })
 };
+
+export const getAllUsers = ({ limit = 5, offset = 0 }) => httpClient.get('/users');

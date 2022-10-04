@@ -10,3 +10,12 @@ export function* createUserSaga(action) {
         yield put(ActionUserCreators.createUserError(error));
     }
 };
+
+export function* getAllUsersSaga(action) {
+    try {
+        const { data: { data: users } } = yield API.getAllUsers(action.payload);
+        yield put(ActionUserCreators.getUsersSuccess(users))
+    } catch (error) {
+        yield put(ActionUserCreators.getUsersError(error));
+    }
+};
