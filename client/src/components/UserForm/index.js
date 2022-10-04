@@ -11,12 +11,12 @@ const UserForm = () => {
         formilBag.resetForm();
     };
     return (
-    <Formik initialValues={{login: '', password: '', avatar: ''}} onSubmit={onSubmit}>
+    <Formik initialValues={{login: '', password: '', image: ''}} onSubmit={onSubmit}>
         {
-        formikProps => (<Form>
+        formikProps => (<Form action="/profile" method="post"   enctype="multipart/form-data">
             <Field name='login' placeholder='login'/>
             <Field name='password' placeholder='password' type='password'/>
-            <input name='avatar' type='file' onChange={event => {formikProps.setFieldValue('avatar', event.target.files[0])}} />
+            <input name='image' type='file' onChange={event => {formikProps.setFieldValue('image', event.target.files[0])}} />
             <input type='submit' value='create user'/>
         </Form>)}
     </Formik>

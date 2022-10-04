@@ -60,3 +60,19 @@ module.exports.deleteUser = async (req, res, next) => {
     next(error);
   }
 };
+
+module.exports.addUserImage = async (req, res, next) => {
+  try {
+    const { params: { userId }, file: { filename } } = req;
+        const [row, [updatedUser]] = await User.update(
+            { imagePath: filename },
+            {
+                where: { id: userId },
+                returning: true
+            }
+        );
+        res.status(200).send({ data: updatedUser });
+  } catch (error) {
+    next(error);
+  }
+};
