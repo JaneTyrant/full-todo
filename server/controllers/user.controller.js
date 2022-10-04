@@ -5,6 +5,9 @@ const { User } = require("../models");
 module.exports.createUser = async (req, res, next) => {
   try {
     const { body } = req;
+    if (req.file) {
+      body.avatar = req.file.filename
+    }
     const values = _.pick(body, ["login", "password", "avatar"]);
     const user = await User.create(values);
     if (!user) {
@@ -56,22 +59,6 @@ module.exports.deleteUser = async (req, res, next) => {
     const { userInstance } = req;
     await userInstance.destroy();
     res.status(200).send({ data: userInstance });
-  } catch (error) {
-    next(error);
-  }
-};
-
-module.exports.addUserImage = async (req, res, next) => {
-  try {
-    const { params: { userId }, file: { filename } } = req;
-        const [row, [updatedUser]] = await User.update(
-            { imagePath: filename },
-            {
-                where: { id: userId },
-                returning: true
-            }
-        );
-        res.status(200).send({ data: updatedUser });
   } catch (error) {
     next(error);
   }

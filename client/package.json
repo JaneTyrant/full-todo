@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "form-data": "^4.0.0",
     "formik": "^2.2.9",
     "immer": "^9.0.15",
     "query-string": "^7.1.1",
@@ -16,6 +17,7 @@
     "react-router-dom": "^6.4.1",
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
+    "redux-devtools-extension": "^2.13.9",
     "redux-saga": "^1.2.1",
     "web-vitals": "^2.1.4",
     "yap": "^0.0.2"
@@ -45,6 +47,7 @@
     ]
   },
   "devDependencies": {
+    "@redux-devtools/extension": "^3.2.3",
     "sass": "^1.55.0"
   }
 }
