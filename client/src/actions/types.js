@@ -8,6 +8,10 @@ const ACTION_TYPES = {
     GET_USERS_SUCCESS: 'get/users/success',
     GET_USERS_ERROR: 'get/users/error',
 
+    GET_USER_REQUEST: 'get/users/id/request',
+    GET_USER_SUCCESS: 'get/users/id/success',
+    GET_USER_ERROR: 'get/users/id/error',
+
     // tasks
 };
 
