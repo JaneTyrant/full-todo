@@ -2,7 +2,7 @@ import axios from 'axios';
 import FormData from 'form-data';
 
 const httpClient = axios.create({
-    baseURL: 'http://localhost:5000/api/'
+    baseURL: 'http://localhost:5000/api'
 });
 
 // export const createUser = (data) => httpClient.post('/users', data);

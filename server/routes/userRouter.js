@@ -13,4 +13,8 @@ userRouter.delete("/:userId", checkUser, UserController.deleteUser);
 
 userRouter.post("/:userId/tasks", checkUser, TaskController.createTask);
 
+// userRouter.route('/')
+//     .post(upload, UserController.createUser)
+//     .get(UserController.getAllUsers)
+
 module.exports = userRouter;
